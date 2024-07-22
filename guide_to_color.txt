@@ -1,14 +1,14 @@
 TITLE: A simple guide to determine your ideal color palette with ease
 AUTHOR: Sejal Kunjiwal
 
+HOW TO DETERMINE THE IDEAL COLOR PALETTE:
 
-
-Step 1: Finding your skin tone
+# Step 1: Finding your skin tone
 Skin tones are classified into 3 types — warm, cool, and neutral. Your skin tone is a primary factor in determining your color palette. Identifying whether you have a warm or cool undertone will help you select the right hues. If you feel uncertain even after trying various colors, opting for a neutral color palette might be a suitable choice.
 If you are not sure about what is your skin tone then this video can be helpful 
 
 
-Step 2: Finding your season
+# Step 2: Finding your season
 After finding out your undertone it’s time to determine your season with the help of your hair and eye colour.
 
 How to determine you seasonal color palette
@@ -18,7 +18,7 @@ Clarity ( clear to soft)
 undertone (warm to cool)
 
 
-1. Spring
+## 1. Spring
 
 Clear spring:
 Clear Springs have a bright and vibrant appearance. Their coloring is typically warm and clear, with high contrast between their skin, hair, and eyes. Clear Springs look best in bold and vivid colors such as coral, turquoise, golden yellow, and true red.
@@ -30,44 +30,38 @@ Light spring:
 Light Springs have a delicate and luminous appearance. They usually have light hair and fair skin with warm undertones. Light Springs shine in soft and pastel shades such as baby blue, lavender, mint green, and light peach.
 
 
+## 2. Autumn
 
-2. Autumn
-
-Deep autumn:
+- Deep autumn:
 Deep Autumns have rich and intense coloring. Their features exhibit a strong contrast between their dark hair, eyes, and warm-toned skin. Deep Autumns are enhanced by deep and earthy colors like chocolate brown, olive green, burnt orange, and deep burgundy.
 
-Warm Autumn:
+- Warm Autumn:
 Warm Autumns have a warm and golden complexion. They typically have hair with golden or reddish undertones and warm-toned skin. Warm Autumns are suited for warm and earthy tones such as mustard yellow, terracotta, rust, and olive.
 
-Soft autumn:
+- Soft autumn:
 Soft Autumns have a soft and muted appearance. Their coloring is typically warm with low to medium contrast between their features. Soft Autumns look best in soft and muted shades like camel, peachy pink, warm beige, and sage green.
 
 
+## 3. Winter
 
-3. Winter
-
-Clear winter:
+- Clear winter:
 Clear Winters have a striking and bold appearance. They exhibit high contrast between their dark hair, eyes, and cool-toned skin. Clear Winters are suited for vibrant and icy colors like royal blue, emerald green, fuchsia, and true red.
 
-Cool winter:
+- Cool winter:
 Cool Winters have a cool and vivid complexion. They typically have dark hair and cool-toned skin with medium to high contrast between their features. Cool Winters shine in cool and jewel-toned hues such as sapphire blue, hot pink, emerald green, and royal purple.
 
-Deep winter:
+- Deep winter:
 Deep Winters have intense coloring. They exhibit a strong contrast between their dark hair, eyes, and cool-toned skin. Deep Winters are flattered by deep and rich colors like midnight blue, plum, burgundy, and emerald green.
 
 
-
-
-
-4. Summer
-
-Light summer:
+## 4. Summer
+- Light summer:
 Light Summers have a delicate and soft appearance. They usually have light hair and fair to medium cool-toned skin. Light Summers are enhanced by soft and cool pastel colors such as baby pink, sky blue, lavender, and soft gray.
 
-Cool summer:
+- Cool summer:
 Cool Summers have a cool and muted complexion. They exhibit low to medium contrast between their features. Cool Summers look best in cool and muted shades like dusty rose, cool aqua, lilac, and soft mint green.
 
-Soft summer:
+- Soft summer:
 Soft Summers have a peaceful and muted appearance. They typically have light to medium cool-toned hair and cool-toned skin. Soft Summers are suited for smooth and muted colors like mauve, dusty pink, powder blue, and sage green.
 
 
