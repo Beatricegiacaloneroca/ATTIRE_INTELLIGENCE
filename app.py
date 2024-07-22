@@ -6,7 +6,7 @@ from anthropic import Anthropic
 import base64
 import os
 
-# API KEY SET UP 
+# _____ API KEY SET UP_____
 
 # Option 1: API set directly as environment variable
 API_KEY = st.secrets["api_keys"]["ANTHROPIC_API_KEY"]
@@ -29,7 +29,7 @@ else:
         MODEL_NAME = st.session_state["claude_model"]
 
 
-# FUNCTIONS 
+# _________ FUNCTIONS __________
 # Encode image to base64
 def encode_image_to_base64(file_path):
     with open(file_path, "rb") as image_file:
@@ -42,12 +42,12 @@ def load_css(css_file_path):
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
-# START STREAMLIT 
-
+# ________ START STREAMLIT _________
 # Set style for streamlit
 load_css("styles.css")
 
-# Step 1: Personal Color Analysis (PCA)
+
+# ------- STEP 1 ------- Personal Color Analysis (PCA) -------
 st.markdown("<h1> First, lets analyse your skin tone today 🔍 </h1>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Upload your image for color analysis", type=["jpeg", "jpg", "png"])
 
@@ -89,8 +89,7 @@ else:
     st.write("Please upload an image to continue.")
 
 
-
-# Step 2: Outfit Recommendation according to PCA (This will be executed only after the color analysis step is completed)
+# ------- STEP 2 ------- Folder Recommendation according to PCA -------- (This will be executed only after the color analysis step is completed)
 if 'color_analysis_result' in locals():
     folder_path = "ZClosetbcn" # Folder with outfit pictures
     st.markdown("<h1> MATCH MAKER </h1>", unsafe_allow_html=True) # display title
@@ -135,7 +134,8 @@ if 'color_analysis_result' in locals():
                 folder_path = os.path.join(folder_path, chosen_folder)
                 print(folder_path)
 
-# From the images in the subfolder selected, find the most appropriate one 
+    
+# ------- STEP 3 ------- Outfit Recommendation according to PCA & Folder & User Inputs -------- 
     # Get a list of all image files in the folder and sort them to ensure consistent order
     image_files = sorted([f for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg'))])
     print(F'IMAGES IN THE SUBFOLDER: {image_files}')
@@ -172,16 +172,14 @@ if 'color_analysis_result' in locals():
     # Message list for the request
     message_list = [
         {"role": 'user', 
-         "content": image_contents + [text_content]}
-    ]
+         "content": image_contents + [text_content]}]
 
     # Invoke Claude to create the response when the user enters a location
     if weather and chosen_folder:
         response = client.messages.create(
             model=MODEL_NAME,
             max_tokens=2048,
-            messages=message_list
-        )
+            messages=message_list)
 
         # Display the response and the chosen image
         if response and response.content and isinstance(response.content, list) and len(response.content) > 0:
