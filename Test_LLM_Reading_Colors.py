@@ -1,4 +1,6 @@
-# --------------- NORMAL WORKING TEST --------------------------
+
+# This test is done to analyze Claude capacity to read colors from images and return HEX codes. 
+
 # REQUIREMENTS
 import streamlit as st
 from anthropic import Anthropic
