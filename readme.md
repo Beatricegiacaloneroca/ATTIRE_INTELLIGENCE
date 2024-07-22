@@ -31,11 +31,6 @@ In the realm of fashion, there exists a profound gap: the absence of sophisticat
 - **Reduction in Returns:** Accurate fit and style recommendations decrease the likelihood of product returns, saving logistical costs.
 
 
-## Technology-Stack
-
-### Python (v 3.10.6)
-**Python** serves as the primary programming language for **MATCH MAKER**, 
-
 ## Technology Stack
 
 ### Anthropic API - claude v3-5 
