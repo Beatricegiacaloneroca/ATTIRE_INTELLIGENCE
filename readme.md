@@ -83,11 +83,8 @@ Before using CLOSET, ensure you have the following installed:
 3. **Interact with the Web Interface**
    - **Upload a Picture:** Upload a photo of your face.
    - **Provide Details:** Input the occasion, your age, and other relevant attributes.
-
-<img src="./8EF3061A-CC72-494E-996E-E5F25941B7D7.jpeg" alt="CLOSET Logo" width="300" height="450">
-
    - **Receive Recommendations:** The system will process the input and provide personalized outfit recommendations.
-<img src="./A3642F86-B731-49FD-9261-D0BA961BF3F9.jpeg" alt="CLOSET Logo" width="300" height="450">
+
 
 
 4. **Understanding the Process**
