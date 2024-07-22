@@ -1,11 +1,11 @@
 # MATCH MAKER: *Smart Search, Smart Style*
 
-
-![CLOSET Logo](./MATCH_MAKER.png)
-
 ### Revolutionizing Fashion with AI
 
 In the realm of fashion, there exists a profound gap: the absence of sophisticated AI to personalize and transform the shopping experience. **MATCH MAKER** is set to revolutionize the industry by harnessing the power of **Large Language Models (LLMs)** to simplify the search process on retailers websites and allow consumers to find the ideal outfit for the event they are attending.
+![CLOSET Logo](./MATCH_MAKER.png)
+
+
 
 
 ## Table of Contents
