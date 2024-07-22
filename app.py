@@ -1,16 +1,5 @@
 # -------------------------------- MATCH MAKER --------------------------------
 
-# STEPS OVERVIEW: 
-# 1) API SET UP (either the user uploads their API or we approve ours to test)
-# 2) FUNCTION CREATION (to encode images and load style)
-# 3) INITIALIZE STREAMLIT (create a simple website with Python) and ask the user to upload a picture of their face AND the place where they are going, their age and other relevant attributes 
-# 4) CLAUDE(A) - IDENTIFY SEASONAL PALETTE --> With Claude (see Test_LLM_Reading_colors.py) and a guide we provide on PCA (See guide_to_color.txt), recognize the user season palette
-# 5) CLAUDE(B) - IDENTIFY THE CORRECT FOLDER --> Ask Claude to identify which folder is best for the situation (folders are divided by occasion such as party or office)
-# 6) CLAUDE(C) - COMBINE OUTPUTS OF C(A) AND C(B) TO FIND IDEAL OUTFIT --> Prompt to choose from the chosen folder the best image according to the PCA 
-# 7) USER HAS RECOMMENDATION
-
-# ------------------------------------------------------------------------------
-
 # REQUIREMENTS
 import streamlit as st
 from anthropic import Anthropic
