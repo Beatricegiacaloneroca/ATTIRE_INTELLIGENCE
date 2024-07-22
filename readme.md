@@ -72,7 +72,9 @@ Before using CLOSET, ensure you have the following installed:
     ```
 
 1. **Set Up Your API**
-   - Ensure you have your API key ready. You can either use your own or the provided one for testing. 
+   - Ensure you have your API key ready. You can either use your own or the provided one for testing.
+     
+     <img src="./streamlitrun1.jpg" alt="Streamlit Run" width="500" height="200">
 
 2. **Run the Application**
    - Navigate to the project directory and start the Streamlit application:
