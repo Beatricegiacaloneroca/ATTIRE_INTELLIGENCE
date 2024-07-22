@@ -1,46 +1,36 @@
-
 # -------------------------------- MATCH MAKER --------------------------------
 
 # STEPS OVERVIEW: 
-    # 1) API SET UP (either user uploads their API or we approve ours to test)
-    # 2) FUNCTION CREATION (to encode images and load style)
-    # 3) INITIALIZE STREAMLIT (create simple website with Python) and ask user to upload a picture of their face AND the place where they are going, their age and other relevant attributes 
-    # 4) CLAUDE(A) - IDENTIFY SEASONAL PALETTE --> With Claude cision (see Test_LLM_Reading_colors.py) and a guide we provide on PCA (See guide_to_color.txt), recognize the user season palette
-    # 5) CLAUDE(B) - IDENTIFY THE CORRECT FOLDER --> Ask Claude to identify which folder is best for the situation (folders are divided by occasion such as party or office)
-    # 6) CLAUDE(C) - COMBINE OUTPUTS OF C(A) AND C(B) TO FIND IDEAL OUTFIT --> Prompt to choose from the chosen folder the best image according to the PCA 
-    # 7) USER HAS RECCOMENDATION
+# 1) API SET UP (either the user uploads their API or we approve ours to test)
+# 2) FUNCTION CREATION (to encode images and load style)
+# 3) INITIALIZE STREAMLIT (create a simple website with Python) and ask the user to upload a picture of their face AND the place where they are going, their age and other relevant attributes 
+# 4) CLAUDE(A) - IDENTIFY SEASONAL PALETTE --> With Claude (see Test_LLM_Reading_colors.py) and a guide we provide on PCA (See guide_to_color.txt), recognize the user season palette
+# 5) CLAUDE(B) - IDENTIFY THE CORRECT FOLDER --> Ask Claude to identify which folder is best for the situation (folders are divided by occasion such as party or office)
+# 6) CLAUDE(C) - COMBINE OUTPUTS OF C(A) AND C(B) TO FIND IDEAL OUTFIT --> Prompt to choose from the chosen folder the best image according to the PCA 
+# 7) USER HAS RECOMMENDATION
 
+# ------------------------------------------------------------------------------
 
-# -- REQUIREMENTS ----------------------------------------------------------------
+# REQUIREMENTS
 import streamlit as st
 from anthropic import Anthropic
 import base64
 import os
 
-# -- API KEY SET UP ----------------------------------------------------------------
+# API KEY SET UP 
 
-# - OPTION 1: API set directly as environment variable
-# API_KEY = st.secrets["api_keys"]["ANTHROPIC_API_KEY"]
-# # Initialize the Anthropic client with the API key
-# if API_KEY is None:
-#     st.error("API key is not set. Please set the ANTHROPIC_API_KEY environment variable.")
-# else:
-#     client = Anthropic(api_key=API_KEY)
-#     MODEL_NAME = "claude-3-5-sonnet-20240620"
-# API set directly as environment variable
+# Option 1: API set directly as environment variable
 API_KEY = st.secrets["api_keys"]["ANTHROPIC_API_KEY"]
 
-# - OPTION 2: prompt user to add API key 
-# Check if the user has provided an API key, otherwise default to the secret
+# Option 2: prompt user to add API key 
 user_claude_api_key = st.sidebar.text_input("Enter your Anthropic API Key:", placeholder="sk-...", type="password")
-
+# Check if the user has provided an API key, otherwise default to the secret
 if "claude_model" not in st.session_state:
     st.session_state["claude_model"] = "claude-3-5-sonnet-20240620"  # Default model
 
 if user_claude_api_key:
     # If the user has provided an API key, use it
     client = Anthropic(api_key=user_claude_api_key)
-    print(f'user privided API key')
     MODEL_NAME = st.session_state["claude_model"]
 else:
     if API_KEY is None:
@@ -49,22 +39,23 @@ else:
         client = Anthropic(api_key=API_KEY)
         MODEL_NAME = st.session_state["claude_model"]
 
-# -- FUNCTIONS --------------------------------------------------------------
-# ---- Function to encode image to base64
+
+# FUNCTIONS 
+# Encode image to base64
 def encode_image_to_base64(file_path):
     with open(file_path, "rb") as image_file:
         binary_data = image_file.read()
     return base64.b64encode(binary_data).decode('utf-8')
 
-# --- Load custom CSS
+# Load custom CSS
 def load_css(css_file_path):
     with open(css_file_path) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
-# -- START STREAMLIT ------------------------------------------------------------------------------------
+# START STREAMLIT 
 
-# Set style for streamlit: Load the custom CSS
+# Set style for streamlit
 load_css("styles.css")
 
 # Step 1: Personal Color Analysis (PCA)
@@ -80,16 +71,19 @@ if uploaded_file is not None:
     encoded_image = encode_image_to_base64("temp_image.jpeg")
 
     # Prepare the image content for the request
-    image_contents = [{"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": encoded_image}}]
+    image_contents = [{"type": "image", 
+                       "source": {"type": "base64", "media_type": "image/jpeg", "data": encoded_image}}]
 
     # Read Article on PCA to teach Claude about it
     with open('guide_to_color.txt', 'r') as file:
         guide_content = file.read()
 
     # Ask Claude to use the guide to find the season palette of the person
-    text_content = {"type": "text", "text": f"You are the assistant of a fashion stylist that has no time to see the image of the client. Your task is to see the image of the client and tell your boss only one of the color palettes season of the person (Autumn, winter,summer, spring) - consider this guide on PCA for context {guide_content} and the color of the eyes, hair and skin of the image. Write the result in this format going to a new line every time there is a comma: Color palette:, Eye Color:, Hair Color:, Skin Color:"}
+    text_content = {"type": "text", 
+                    "text": f"You are the assistant of a fashion stylist that has no time to see the image of the client. Your task is to see the image of the client and tell your boss only one of the color palettes season of the person (Autumn, winter,summer, spring) - consider this guide on PCA for context {guide_content} and the color of the eyes, hair and skin of the image. Write the result in this format going to a new line every time there is a comma: Color palette:, Eye Color:, Hair Color:, Skin Color:"}
 
-    message_list = [{"role": 'user', "content": image_contents + [text_content]}]
+    message_list = [{"role": 'user', 
+                     "content": image_contents + [text_content]}]
 
     response = client.messages.create(
         model=MODEL_NAME,
@@ -106,18 +100,11 @@ else:
     st.write("Please upload an image to continue.")
 
 
+
 # Step 2: Outfit Recommendation according to PCA (This will be executed only after the color analysis step is completed)
 if 'color_analysis_result' in locals():
-    # Folder with outfit pictures
-    folder_path = "ZClosetbcn"
-
+    folder_path = "ZClosetbcn" # Folder with outfit pictures
     st.markdown("<h1> MATCH MAKER </h1>", unsafe_allow_html=True) # display title
-
-    # # Display images on Streamlit in four columns
-    # columns = st.columns(4)
-    # for idx, image in enumerate(image_files):
-    #     with columns[idx % 4]:
-    #         st.image(os.path.join(folder_path, image), width=120)
 
     # Streamlit text input for location
     st.markdown("<h3>Where are you going today?</h3>", unsafe_allow_html=True)
@@ -126,7 +113,7 @@ if 'color_analysis_result' in locals():
     preference = st.text_input("Is there any color or garment you do not like?", "")
     weather = st.text_input("Is it cold or warm?", "")
 
-    # Choose the most appropiate subfolder according to the occasion 
+    # Choose the most appropriate subfolder according to the occasion 
     subfolders = [f.name for f in os.scandir(folder_path) if f.is_dir()]
     print(f'subfolders list:{subfolders}')
     
@@ -159,7 +146,7 @@ if 'color_analysis_result' in locals():
                 folder_path = os.path.join(folder_path, chosen_folder)
                 print(folder_path)
 
-# From the images in the subfolder selected, find the most appropiate one 
+# From the images in the subfolder selected, find the most appropriate one 
     # Get a list of all image files in the folder and sort them to ensure consistent order
     image_files = sorted([f for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg'))])
     print(F'IMAGES IN THE SUBFOLDER: {image_files}')
@@ -170,7 +157,8 @@ if 'color_analysis_result' in locals():
 
     # Prepare the image contents for the request
     image_contents = [
-        {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": encoded_image}}
+        {"type": "image", 
+         "source": {"type": "base64", "media_type": "image/png", "data": encoded_image}}
         for encoded_image in encoded_images]
 
     # Apply inline styles to ensure font size change
@@ -194,7 +182,8 @@ if 'color_analysis_result' in locals():
 
     # Message list for the request
     message_list = [
-        {"role": 'user', "content": image_contents + [text_content]}
+        {"role": 'user', 
+         "content": image_contents + [text_content]}
     ]
 
     # Invoke Claude to create the response when the user enters a location
