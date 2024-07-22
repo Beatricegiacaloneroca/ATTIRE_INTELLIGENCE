@@ -6,7 +6,7 @@ In the realm of fashion, there exists a profound gap: the absence of sophisticat
 
 
 ![CLOSET Logo](./MATCH_MAKER.png)
-
+*image generated with DALL·E 3*
 
 
 
