@@ -54,7 +54,7 @@ In the realm of online fashion, there exists a profound gap: the absence of soph
     caption = blip_processor.decode(out[0], skip_special_tokens=True)
     ```
   
-## CLIP Model (Contrastive Language–Image Pre-training) (for app_categorize.py): 
+### CLIP Model (Contrastive Language–Image Pre-training) (for app_categorize.py): 
 - It is used for vectorizing the captions generated with the BLIP model -- the vectors capture the meaning of the caption
 - **Library Used**: transformers from Hugging Face
 - **Models**:
@@ -66,7 +66,7 @@ In the realm of online fashion, there exists a profound gap: the absence of soph
 ```
 
 
-## KMeans Clustering(for app_categorize.py): 
+### KMeans Clustering(for app_categorize.py): 
 - Once we have created the vectors with the clip model, we use the Kmeans algorithm to cluster the vectors representing the captions into distinct groups (in this way, similar images are grouped together)
 - **Library Used**: scikit-learn
 ```
