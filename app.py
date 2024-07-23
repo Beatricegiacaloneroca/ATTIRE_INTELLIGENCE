@@ -47,7 +47,7 @@ def load_css(css_file_path):
 load_css("styles.css")
 
 
-# ------- STEP 1 ------- Personal Color Analysis (PCA) -------
+# ------- STEP 1 ------- Personal Color Analysis -------
 st.markdown("<h1> First, lets analyse your skin tone today 🔍 </h1>", unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Upload your image for color analysis", type=["jpeg", "jpg", "png"])
 
@@ -89,7 +89,7 @@ else:
     st.write("Please upload an image to continue.")
 
 
-# ------- STEP 2 ------- Folder Recommendation according to PCA -------- (This will be executed only after the color analysis step is completed)
+# ------- STEP 2 ------- Folder Recommendation according to user input -------- (This will be executed only after the color analysis step is completed)
 if 'color_analysis_result' in locals():
     folder_path = "ZClosetbcn" # Folder with outfit pictures
     st.markdown("<h1> MATCH MAKER </h1>", unsafe_allow_html=True) # display title
