@@ -14,6 +14,7 @@ In the realm of online fashion, there exists a profound gap: the absence of soph
 - [Business-Model](#business-model)
 - [Technology Stack](#technology-stack)
 - [Usage](#usage)
+- [Subfolders Creation](#How-to-create-subfolders?)
 
 
 ## Business-Model
@@ -35,13 +36,32 @@ In the realm of online fashion, there exists a profound gap: the absence of soph
 
 ## Technology Stack
 
-### Anthropic API - claude v3-5 
+### Anthropic API - claude v3-5 (for app.py)
 **Anthropic API** integrates advanced natural language processing capabilities to:
 - **Process User Input:** Analyze user descriptions, preferences, and needs.
 - **Vision** Recognize hex colors from user-uploaded images. This helps in the Seasonal Palette Identification.
 - **Generate Recommendations:** Combine user input with encoded images to provide personalized outfit suggestions.
 
-### Streamlit
+### BLIP Model (for app_categorize.py): 
+- used to generate the caption of the images  
+- **Library Used**: transformers from Hugging Face
+- **Models**:
+  * **BlipProcessor**: It prepares the image data in a format that the BlipForConditionalGeneration model can understand and processes the model's output into human-readable text. It converts the image into a tensor before the caption is generated and then the same model is used again to convert the output of the BlipForConditionalGeneration model to have a human-readable caption.
+  * **BlipForConditionalGeneration**: generates the caption
+  
+## CLIP Model (Contrastive Language–Image Pre-training) (for app_categorize.py): 
+- It is used for vectorizing the captions generated with the BLIP model -- the vectors capture the meaning of the caption
+- **Library Used**: transformers from Hugging Face
+- **Models**:
+  * **CLIPProcessor**: preprocess the text caption so that it can be correctly input into the CLIPModel
+  *  **CLIPModel**: model used for extracting feature embeddings from the processed text 
+
+## KMeans Clustering(for app_categorize.py): 
+- Once we have created the vectors with the clip model, we use the Kmeans algorithm to cluster the vectors representing the captions into distinct groups (in this way, similar images are grouped together)
+- **Library Used**: scikit-learn
+
+
+### Streamlit (for app.py)
 **Streamlit** powers the web interface of **MATCH MAKER (CLOSET)**, providing an intuitive and interactive platform for users to upload images, input details, and receive real-time fashion recommendations.
 
 ### Python
@@ -57,11 +77,11 @@ response = client.messages.create(
         max_tokens=2048,
         messages=message_list)
 ```
-        
 
 
 
-## Usage
+
+## Usage of app.py
 
 ### Prerequisites
 Before using CLOSET, ensure you have the following installed:
@@ -95,4 +115,46 @@ Before using CLOSET, ensure you have the following installed:
    - **API Interaction:** The Anthropic API processes user input and generates recommendations based on NLP.
    - **Personalized Output:** You receive tailored fashion advice considering your input and extracted features.
 
+
+## How to create subfolders? 
+
+When categorizing images, it will often be the case that the dataset is too large to create subfolders manually. In the file app_categorize.py we provide a solution by clustering the images according to a Kmeans algorithm. 
+Here’s an overview of the models use and step-by-step description. 
+
+### Models used: 
+- BLIP: it is used to generate descriptive captions for images
+  ```
+  blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
+  blip_processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
+```
+- CLIP:       
+
+1. **Initialize KMeans Clustering**:
+   - Use the KMeans algorithm to cluster the vectors representing the image captions:
+     ```python
+     kmeans = KMeans(n_clusters=num_categories, random_state=0).fit(vectors)
+     labels = kmeans.labels_
+     ```
+
+2. **Create Subfolders**:
+   - For each cluster, create a subfolder named after the cluster label and copy the corresponding images into these subfolders:
+     ```python
+     for label in range(num_categories):
+         subfolder_path = os.path.join(target_folder_path, f"subfolder_{label}")
+         os.makedirs(subfolder_path, exist_ok=True)
+         for (image_file, caption), image_label in zip(captions, labels):
+             if image_label == label:
+                 shutil.copy(image_file, subfolder_path)
+                 with open(os.path.join(subfolder_path, f"{os.path.basename(image_file)}.txt"), 'w') as f:
+                     f.write(caption)
+     ```
+
+### Explanation:
+- **KMeans Clustering**: The `KMeans` algorithm is used to group the vectors into a specified number of clusters. Each vector corresponds to an image caption, and clusters represent groups of similar captions.
+- **Labels**: The `labels` array contains the cluster label for each image vector.
+- **Subfolder Creation**:
+  - **Loop through each cluster label**: For each cluster, a subfolder is created with a name based on the cluster label.
+  - **Copy Images and Captions**: Images that belong to the current cluster are copied into the corresponding subfolder. Additionally, a text file containing the caption is saved alongside each image.
+
+By following this process, images are organized into subfolders based on their content, making it easier to browse and find similar images.
 
