@@ -155,6 +155,8 @@ By following this process, images are organized into subfolders based on their c
 - **Boost in Online Sales:** Precision in suggestions leads to higher conversion rates and larger purchase volumes.
 - **Reduction in Returns:** Accurate fit and style recommendations decrease the likelihood of product returns, saving logistical costs.
 
+----
+Video to demo (2 minutes) - https://www.youtube.com/watch?v=ECXdJLRovHc
 
-Feel free to contact me at beatricegiacaloneroca@gmail.com for more information/demo !!
+Feel free to contact me at beatricegiacaloneroca@gmail.com for more information!!
 
