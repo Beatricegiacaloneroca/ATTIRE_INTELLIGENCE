@@ -155,4 +155,5 @@ Here’s a step-by-step description:
 
 By following this process, images are organized into subfolders based on their content, making it easier to browse to then run the app.py file which will directly choose the best folder according to its name. 
 
+Feel free to contact me at beatricegiacaloneroca@gmail.com for more information!!
 
