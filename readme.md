@@ -11,27 +11,10 @@ In the realm of online fashion, there exists a profound gap: the absence of soph
 
 
 ## Table of Contents
-- [Business-Model](#business-model)
 - [Technology Stack](#technology-stack)
 - [Usage](#usage)
 - [Subfolders Creation](#Subfolder-creation)
-
-
-## Business-Model
-
-### Why do end consumers use Match Maker?
-
-- **Personalized Shopping Experience:** Match Maker uses Claude v3-5 to provide outfit recommendations tailored to individual style preferences, body type, and specific occasions, significantly reducing browsing time.
-- **Virtual Stylist:** Users can simply upload a photo to receive expert styling advice, bypassing the need for in-person consultations and shopping trips.
-- **Enhanced Confidence:** Personalized recommendations boost user confidence in their fashion choices, knowing they are curated by advanced AI.
-
-### How do Retailers benefit from Match Maker?
-
-- **Increased Customer Satisfaction:** By delivering highly personalized recommendations, CLOSET enhances customer loyalty and satisfaction.
-- **Operational Efficiency:** Reducing the need for 1) physical stores and 2) staff cuts down on operational costs and 3) streamlines the shopping process.
-- **Market Differentiation:** Leveraging cutting-edge AI technology sets companies apart in a competitive market, attracting tech-savvy consumers.
-- **Boost in Online Sales:** Precision in suggestions leads to higher conversion rates and larger purchase volumes.
-- **Reduction in Returns:** Accurate fit and style recommendations decrease the likelihood of product returns, saving logistical costs.
+- [Business-Model](#business-model)
 
 
 ## Technology Stack
@@ -155,5 +138,23 @@ Here’s a step-by-step description:
 
 By following this process, images are organized into subfolders based on their content, making it easier to browse to then run the app.py file which will directly choose the best folder according to its name. 
 
-Feel free to contact me at beatricegiacaloneroca@gmail.com for more information!!
+
+## Business-Model
+
+### Why do end consumers use Match Maker?
+
+- **Personalized Shopping Experience:** Match Maker uses Claude v3-5 to provide outfit recommendations tailored to individual style preferences, body type, and specific occasions, significantly reducing browsing time.
+- **Virtual Stylist:** Users can simply upload a photo to receive expert styling advice, bypassing the need for in-person consultations and shopping trips.
+- **Enhanced Confidence:** Personalized recommendations boost user confidence in their fashion choices, knowing they are curated by advanced AI.
+
+### How do Retailers benefit from Match Maker?
+
+- **Increased Customer Satisfaction:** By delivering highly personalized recommendations, CLOSET enhances customer loyalty and satisfaction.
+- **Operational Efficiency:** Reducing the need for 1) physical stores and 2) staff cuts down on operational costs and 3) streamlines the shopping process.
+- **Market Differentiation:** Leveraging cutting-edge AI technology sets companies apart in a competitive market, attracting tech-savvy consumers.
+- **Boost in Online Sales:** Precision in suggestions leads to higher conversion rates and larger purchase volumes.
+- **Reduction in Returns:** Accurate fit and style recommendations decrease the likelihood of product returns, saving logistical costs.
+
+
+Feel free to contact me at beatricegiacaloneroca@gmail.com for more information/demo !!
 
