@@ -1,19 +1,20 @@
-# - ATTIRE INTELLIGENCE - 
+# ATTIRE INTELLIGENCE 
 
+## *Match Maker*
 
-## MATCH MAKER: *Smart Search, Smart Style*
-
-### Making Search Easier with Claude
+### Anthropic's Claude - Smart Search, Smart Style
 
 In e-commerce fashion, we lack sophisticated AI to personalize and transform the shopping experience. MATCH MAKER is set to revolutionize the industry by harnessing the power of Large Language Models (LLMs) to simplify the search process on retailers' websites and allow consumers to find the ideal outfit for the event they are attending.
+
+
 
 
 ![CLOSET Logo](./MATCH_MAKER.png)
 *image generated with DALL·E 3*
 
-
-Video to demo (2 minutes) - https://www.youtube.com/watch?v=ECXdJLRovHc
-
+---
+* Demo [ 2 mins video ] - https://www.youtube.com/watch?v=ECXdJLRovHc
+---
 
 ## Table of Contents
 - [Technology Stack](#technology-stack)
