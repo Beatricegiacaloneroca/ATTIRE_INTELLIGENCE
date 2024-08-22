@@ -1,8 +1,11 @@
-# MATCH MAKER: *Smart Search, Smart Style*
+# - ATTIRE INTELLIGENCE - 
 
-### Making Search Easier with Claude 
 
-In the realm of online fashion, there exists a profound gap: the absence of sophisticated AI to personalize and transform the shopping experience. **MATCH MAKER** is set to revolutionize the industry by harnessing the power of **Large Language Models (LLMs)** to simplify the search process on retailers websites and allow consumers to find the ideal outfit for the event they are attending.
+## MATCH MAKER: *Smart Search, Smart Style*
+
+### Making Search Easier with Claude
+
+In e-commerce fashion, we lack sophisticated AI to personalize and transform the shopping experience. MATCH MAKER is set to revolutionize the industry by harnessing the power of Large Language Models (LLMs) to simplify the search process on retailers' websites and allow consumers to find the ideal outfit for the event they are attending.
 
 
 ![CLOSET Logo](./MATCH_MAKER.png)
