@@ -7,6 +7,8 @@ In the realm of online fashion, there exists a profound gap: the absence of soph
 
 ![CLOSET Logo](./MATCH_MAKER.png)
 *image generated with DALL·E 3*
+
+
 Video to demo (2 minutes) - https://www.youtube.com/watch?v=ECXdJLRovHc
 
 
