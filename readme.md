@@ -7,7 +7,7 @@ In the realm of online fashion, there exists a profound gap: the absence of soph
 
 ![CLOSET Logo](./MATCH_MAKER.png)
 *image generated with DALL·E 3*
-
+Video to demo (2 minutes) - https://www.youtube.com/watch?v=ECXdJLRovHc
 
 
 ## Table of Contents
@@ -156,7 +156,6 @@ By following this process, images are organized into subfolders based on their c
 - **Reduction in Returns:** Accurate fit and style recommendations decrease the likelihood of product returns, saving logistical costs.
 
 ----
-Video to demo (2 minutes) - https://www.youtube.com/watch?v=ECXdJLRovHc
 
 Feel free to contact me at beatricegiacaloneroca@gmail.com for more information!!
 
