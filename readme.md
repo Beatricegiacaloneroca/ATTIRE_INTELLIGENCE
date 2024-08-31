@@ -11,7 +11,8 @@ In e-commerce fashion, we lack sophisticated AI to personalize and transform the
 
 ![CLOSET Logo](./MATCH_MAKER.png)
 *image generated with DALL·E 3*
-* Demo [ 2 mins video ] - https://www.youtube.com/watch?v=ECXdJLRovHc
+
+
 
 ## Table of Contents
 - [Technology Stack](#technology-stack)
@@ -75,6 +76,8 @@ response = client.messages.create(
         max_tokens=2048,
         messages=message_list)
 ```
+
+
 
 
 
@@ -143,7 +146,7 @@ By following this process, images are organized into subfolders based on their c
 
 
 ## Business-Model
-
+[Demo](https://www.youtube.com/watch?v=ECXdJLRovHc) 
 ### Why do end consumers use Match Maker?
 
 - **Personalized Shopping Experience:** Match Maker uses Claude v3-5 to provide outfit recommendations tailored to individual style preferences, body type, and specific occasions, significantly reducing browsing time.
@@ -162,4 +165,4 @@ By following this process, images are organized into subfolders based on their c
 
 Feel free to contact me at beatricegiacaloneroca@gmail.com for more information!!
 
----
+
