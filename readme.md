@@ -12,9 +12,6 @@ In e-commerce fashion, we lack sophisticated AI to personalize and transform the
 ![CLOSET Logo](./MATCH_MAKER.png)
 *image generated with DALL·E 3*
 
----
-* Demo [ 2 mins video ] - https://www.youtube.com/watch?v=ECXdJLRovHc
----
 
 ## Table of Contents
 - [Technology Stack](#technology-stack)
@@ -165,3 +162,6 @@ By following this process, images are organized into subfolders based on their c
 
 Feel free to contact me at beatricegiacaloneroca@gmail.com for more information!!
 
+---
+* Demo [ 2 mins video ] - https://www.youtube.com/watch?v=ECXdJLRovHc
+---
